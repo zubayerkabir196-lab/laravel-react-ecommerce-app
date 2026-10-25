@@ -17,6 +17,9 @@ export default function Register({ passwordRules }: Props) {
     return (
         <>
             <Head title="Register" />
+            <div className='p-8'>
+            <div className="card bg-base-100 shadow-sm max-w-md mx-auto">
+             <div className='card-body'>
             <Form
                 {...store.form()}
                 resetOnSuccess={['password', 'password_confirmation']}
@@ -110,6 +113,9 @@ export default function Register({ passwordRules }: Props) {
                     </>
                 )}
             </Form>
+            </div>
+            </div>
+            </div>
         </>
     );
 }

@@ -3,7 +3,8 @@ import { Toaster } from '@/components/ui/sonner';
 import { TooltipProvider } from '@/components/ui/tooltip';
 import { initializeTheme } from '@/hooks/use-appearance';
 import AppLayout from '@/layouts/app-layout';
-import AuthLayout from '@/layouts/auth-layout';
+import AppLayout2 from '@/layouts/app-layout2';
+import AuthLayout from '@/layouts/authenticatedLayout';
 import SettingsLayout from '@/layouts/settings/layout';
 
 const appName = import.meta.env.VITE_APP_NAME || 'Laravel';
@@ -15,7 +16,7 @@ void createInertiaApp({
             case name === 'welcome':
                 return null;
             case name.startsWith('auth/'):
-                return AuthLayout;
+                return [AppLayout2];
             case name.startsWith('settings/'):
                 return [AppLayout, SettingsLayout];
             default:

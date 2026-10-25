@@ -1,0 +1,18 @@
+import { AppContent } from '@/components/app-content';
+import { AppShell } from '@/components/app-shell';
+//import { AppSidebar } from '@/components/app-sidebar';
+import Navbar from '@/components/App/Navbar';
+import type { AppLayoutProps } from '@/types';
+
+export default function AppSidebarLayout({
+    children,
+}: AppLayoutProps) {
+    return (
+        <AppShell variant="sidebar">  
+            <AppContent variant="sidebar" className="min-w-0 overflow-x-clip">
+                <Navbar/>
+                {children}
+            </AppContent>
+        </AppShell>
+    );
+}
